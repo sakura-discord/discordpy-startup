@@ -10,8 +10,8 @@ import re
 import aiohttp
 import json
 from discord.ext import commands,tasks
-#prefix定義
-bot = commands.Bot(command_prefix='a)')
+#prefix定義,help無効化
+bot = commands.Bot(command_prefix=["a)"], help_command=None)
 token = os.environ['DISCORD_BOT_TOKEN']
 
 #ERRORのなんか
@@ -28,6 +28,9 @@ async def test(ctx):
 @bot.command()
 async def code(ctx):
     await ctx.send('コードはこちらですを: https://github.com/null1981/discordpy-startup')
+@bot.command()
+async def help(ctx):
+    await ctx.send('help(これ)\ncode\ndm\ntest\neval')
 #eval
 @bot.command(name="eval")
 @commands.is_owner()
