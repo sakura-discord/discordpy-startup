@@ -28,6 +28,11 @@ async def test(ctx):
 @bot.command()
 async def code(ctx):
     await ctx.send('コードはこちらですを: https://github.com/null1981/discordpy-startup')
+
+#help
+@bot.command()
+async def help(ctx):
+    await ctx.send('test\ncode\neval')
 #eval
 @bot.command(name="eval")
 @commands.is_owner()
@@ -87,4 +92,5 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.do_not_disturb, activity=activity)
     print("ぎばらは元気に動いてます")
               
+
 bot.run(token)
