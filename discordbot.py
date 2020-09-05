@@ -83,8 +83,8 @@ async def dm(ctx, user : discord.User, *, message):
 #play
 @bot.event
 async def on_ready():
-    activity = discord.Game(name="kyonの靴下", type=3)
+    activity = discord.Game(name="kyonの靴下", type=2)
     await bot.change_presence(status=discord.Status.idle, activity=activity)
-    print("Bot is ready!")
+    print("ぎばらは元気に動いてます")
               
 bot.run(token)
