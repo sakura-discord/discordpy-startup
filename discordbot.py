@@ -86,13 +86,5 @@ async def eval_(ctx, *, cmd):
 async def dm(ctx, user : discord.User, *, message):
     await user.send(message)
     await ctx.message.add_reaction("👎")      
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        bot.run(token)
+              
+bot.run(token)
