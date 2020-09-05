@@ -11,7 +11,7 @@ import aiohttp
 import json
 from discord.ext import commands,tasks
 
-bot = commands.Bot(command_prefix='/')
+bot = commands.Bot(command_prefix='a+')
 token = os.environ['DISCORD_BOT_TOKEN']
 
 
