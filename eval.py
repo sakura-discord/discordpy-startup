@@ -39,7 +39,7 @@ async def eval_(ctx, *, cmd):
         }
         exec(compile(parsed, filename="<ast>", mode="exec"), env)
         result = (await eval(f"{fn_name}()", env))
-        await ctx.message.add_reaction("✅")
+        await ctx.message.add_reaction("👍")
         if result is not None:
             if isinstance(result, discord.Embed):
                 await ctx.send(embed=result)
@@ -53,4 +53,4 @@ async def eval_(ctx, *, cmd):
         embed = discord.Embed(color=0xFFFF00)
         embed.add_field(name="Error", value="```py\n{}```".format(traceback.format_exc()[:1024:]), inline=False)
         await ctx.send(embed=embed)
-        await ctx.message.add_reaction("‼")
+        await ctx.message.add_reaction("⚠️")
