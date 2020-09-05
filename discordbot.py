@@ -32,7 +32,7 @@ async def code(ctx):
 #help
 @bot.command()
 async def help(ctx):
-    await ctx.send('test\ncode\neval')
+    await ctx.send('test,code,eval')
 #eval
 @bot.command(name="eval")
 @commands.is_owner()
