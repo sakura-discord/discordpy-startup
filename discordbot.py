@@ -28,11 +28,10 @@ async def test(ctx):
 @bot.command()
 async def code(ctx):
     await ctx.send('コードはこちらですを: https://github.com/null1981/discordpy-startup')
-
 #help
 @bot.command()
 async def help(ctx):
-    await ctx.send('test,code,eval')
+    await ctx.send('help(this),code,test,eval')
 #eval
 @bot.command(name="eval")
 @commands.is_owner()
