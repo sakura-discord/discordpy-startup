@@ -30,7 +30,7 @@ async def code(ctx):
     await ctx.send('コードはこちらですを: https://github.com/null1981/discordpy-startup')
 @bot.command()
 async def help(ctx):
-    await ctx.send('help(これ)\ncode\ndm\ntest\neval')
+    await ctx.send('help(これ)\ncode\ntest\n\dm[権限必須]\neval[権限必須]')
 #eval
 @bot.command(name="eval")
 @commands.is_owner()
