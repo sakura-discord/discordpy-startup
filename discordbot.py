@@ -31,7 +31,7 @@ async def code(ctx):
 
 @bot.command()
 async def help(ctx):
-    await ctx.send('```help\n  :command一覧(これ)\ncode\n  :githubを出す\ntest\n  :OKと帰ってくるだけです\n dm\n  :dmを送りつける\neval\n  :実験用コマンド```')
+    await ctx.send('```json help\n  :command一覧(これ)\ncode\n  :githubを出す\ntest\n  :OKと帰ってくるだけです\n dm\n  :dmを送りつける\neval\n  :実験用コマンド```')
 #eval
 @bot.command(name="eval")
 @commands.is_owner()
