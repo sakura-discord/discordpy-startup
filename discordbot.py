@@ -26,7 +26,7 @@ async def ping(ctx):
     await ctx.send('pong')
 @bot.command()
 async def code(ctx):
-    await ctx.send('コードはこちらです: https://github.com/null1981/discordpy-startup')
+    await ctx.send('コードはこちらですを: https://github.com/null1981/discordpy-startup')
 @bot.command(name="eval")
 @commands.is_owner()
 async def eval_(ctx, *, cmd):
