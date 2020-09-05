@@ -10,23 +10,25 @@ import re
 import aiohttp
 import json
 from discord.ext import commands,tasks
-
+#prefix定義
 bot = commands.Bot(command_prefix='a)')
 token = os.environ['DISCORD_BOT_TOKEN']
 
-
+#ERRORのなんか
 @bot.event
 async def on_command_error(ctx, error):
     orig_error = getattr(error, "original", error)
     error_msg = ''.join(traceback.TracebackException.from_exception(orig_error).format())
     await ctx.send(error_msg)
-
+#testcommand
 @bot.command()
-async def ping(ctx):
-    await ctx.send('pong')
+async def test(ctx):
+    await ctx.send('OK')
+#開発環境が迷子になった時用
 @bot.command()
 async def code(ctx):
     await ctx.send('コードはこちらですを: https://github.com/null1981/discordpy-startup')
+#eval
 @bot.command(name="eval")
 @commands.is_owner()
 async def eval_(ctx, *, cmd):
@@ -72,13 +74,17 @@ async def eval_(ctx, *, cmd):
         embed.add_field(name="Error", value="```py\n{}```".format(traceback.format_exc()[:1024:]), inline=False)
         await ctx.send(embed=embed)
         await ctx.message.add_reaction("⚠️")
-
+#dmを送りつける
 @bot.command()
 @commands.is_owner()
 async def dm(ctx, user : discord.User, *, message):
     await user.send(message)
     await ctx.message.add_reaction("✅")
-
-        
+#play
+@bot.event
+async def on_ready():
+    activity = discord.Game(name="kyonの靴下", type=3)
+    await bot.change_presence(status=discord.Status.idle, activity=activity)
+    print("Bot is ready!")
               
 bot.run(token)
