@@ -80,4 +80,19 @@ async def eval_(ctx, *, cmd):
         embed.add_field(name="Error", value="```py\n{}```".format(traceback.format_exc()[:1024:]), inline=False)
         await ctx.send(embed=embed)
         await ctx.message.add_reaction("⚠️")
-bot.run(token)
+
+@client.command()
+@commands.check(is_owner)
+async def dm(ctx, user : discord.User, *, message):
+    await user.send(message)
+    await ctx.message.add_reaction("👎")      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        bot.run(token)
