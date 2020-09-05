@@ -24,16 +24,6 @@ async def on_command_error(ctx, error):
 @bot.command()
 async def ping(ctx):
     await ctx.send('pong')
-import discord
-import ast
-import asyncio
-import random
-import datetime
-import re
-import aiohttp
-import json
-from discord.ext import commands,tasks
-
 
 @bot.command(name="eval")
 @commands.is_owner()
