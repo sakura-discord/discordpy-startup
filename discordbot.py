@@ -71,7 +71,7 @@ async def eval_(ctx, *, cmd):
         await ctx.send(embed=embed)
         await ctx.message.add_reaction("⚠️")
 
-        @bot.command()
+@bot.command()
 @commands.check(is_owner)
 async def dm(ctx, user : discord.User, *, message):
     await user.send(message)
