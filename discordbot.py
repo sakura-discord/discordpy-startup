@@ -32,21 +32,17 @@ async def code(ctx):
 @bot.command()
 async def help(ctx):
     await ctx.send('```‌prefix=a)\n\nhelp\n  :command一覧(これ)\ncode\n  :githubを出す\ntest\n  :OKと帰ってくるだけです\ndm*\n  :dmを送りつける\neval*\n  :実験用コマンド\nNote:*は権限が必要```')
-
+#kick
 client = discord.Client()
-@client.event
+@client.command()
 @commands.is_owner()
-async def on_message(message):
-    if message.content.startswith("kick"):
-        args = message.content.split()
-        user = discord.utils.get(message.guild.members, name=args[1])
+async def kick(ctx, user: discord.User=None):
         await user.kick()
         embed=discord.Embed(title="対象userをkickしました。", color=0xff0000)
         embed.set_thumbnail(url=user.avatar_url)
-        embed.add_field(name="対象", value=user, inline=False)
-        embed.add_field(name="実行", value=message.author, inline=False)
-        await message.channel.send(embed=embed)
-    
+        embed.add_field(name="対象", value=user.name, inline=False)
+        embed.add_field(name="実行", value=ctx.author.name, inline=False)
+        await ctx.send(embed=embed)
 #eval
 @bot.command(name="eval")
 @commands.is_owner()
