@@ -28,7 +28,7 @@ async def test(ctx):
 @bot.command()
 async def code(ctx):
     await ctx.send('コードはこちらですを: https://github.com/null1981/discordpy-startup')
-
+#help
 @bot.command()
 async def help(ctx):
     await ctx.send('```‌prefix=a)\n\nhelp\n  :command一覧(これ)\ncode\n  :githubを出す\ntest\n  :OKと帰ってくるだけです\ndm*\n  :dmを送りつける\neval*\n  :実験用コマンド\nNote:*は権限が必要```')
