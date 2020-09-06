@@ -33,6 +33,7 @@ async def code(ctx):
 async def help(ctx):
     await ctx.send('```‌prefix=a)\n\nhelp\n  :command一覧(これ)\ncode\n  :githubを出す\ntest\n  :OKと帰ってくるだけです\ndm*\n  :dmを送りつける\neval*\n  :実験用コマンド\nNote:*は権限が必要```')
 
+client = discord.Client()
 @client.event
 @commands.is_owner()
 async def on_message(message):
