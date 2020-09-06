@@ -37,7 +37,7 @@ client = discord.Client()
 @client.event
 @commands.is_owner()
 async def on_message(message):
-    if message.content.startswith("a)kick"):
+    if message.content.startswith("kick"):
         args = message.content.split()
         user = discord.utils.get(message.guild.members, name=args[1])
         await user.kick()
