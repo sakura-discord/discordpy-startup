@@ -11,7 +11,7 @@ import aiohttp
 import json
 from discord.ext import commands,tasks
 #prefix定義,help無効化
-bot = commands.Bot(command_prefix=["a)"], help_command=None)
+client = commands.Bot(command_prefix=["a)"], help_command=None)
 token = os.environ['DISCORD_BOT_TOKEN']
 
 #ERRORのなんか
@@ -33,7 +33,6 @@ async def code(ctx):
 async def help(ctx):
     await ctx.send('```‌prefix=a)\n\nhelp\n  :command一覧(これ)\ncode\n  :githubを出す\ntest\n  :OKと帰ってくるだけです\ndm*\n  :dmを送りつける\neval*\n  :実験用コマンド\nNote:*は権限が必要```')
 #kick
-client = discord.Client()
 @client.command()
 @commands.is_owner()
 async def kick(ctx, user: discord.User=None):
